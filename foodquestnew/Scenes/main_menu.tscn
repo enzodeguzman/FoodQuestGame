@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://rpr2qxrleodv"]
+
+[ext_resource type="Script" uid="uid://nrljs78w0cri" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://bhy1cr3cv0u7q" path="res://Assets/Start2.png" id="2_n45e2"]
+[ext_resource type="Shader" uid="uid://bnoena5to36ok" path="res://Scenes/background.gdshader" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://dihxg42f6owtx" path="res://Assets/StartHover.png" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://bka7oiiuck7hm" path="res://Assets/Blue.png" id="4_opfnp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp0ys"]
+shader = ExtResource("3_n45e2")
+shader_parameter/SPEED = 0.5
+
+[node name="MainMenu" type="Node2D" unique_id=1921010990]
+script = ExtResource("1_28flt")
+
+[node name="Button_Manager" type="Control" parent="." unique_id=635478850]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="Button_Manager" unique_id=1035325398]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 188.0
+offset_right = 327.0
+offset_bottom = 488.0
+texture_normal = ExtResource("2_n45e2")
+texture_hover = ExtResource("3_opfnp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=513876255]
+material = SubResource("ShaderMaterial_cp0ys")
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("4_opfnp")
+stretch_mode = 1
+
+[connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
