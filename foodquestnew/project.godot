@@ -16,9 +16,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="FOODQUESTGAME"
 run/main_scene="uid://rpr2qxrleodv"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
 AudioStreamPlayer2d="*res://Scenes/audio_stream_player_2d.tscn"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
